@@ -15,24 +15,33 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    dankmaterialshell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./nixos/configuration.nix
-        #./modules/start-cosmic-ext.nix= {
-      ];
-    };
-    homeConfigurations = {
-      "hikiru@nixos" = home-manager.lib.homeManagerConfiguration {
-        #pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = { inherit inputs; };
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    let
+      lib = nixpkgs.lib;
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+    in {
+      nixosConfigurations.nixos = lib.nixosSystem {
+        specialArgs = { inherit inputs; };
         modules = [
-          ./home-manager/home.nix
+          ./nixos/configuration.nix
+          #./modules/start-cosmic-ext.nix= {
         ];
       };
+
+      homeConfigurations = { hikiru = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./home-manager/home.nix
+          ];
+        };
+      };
     };
-  };
 }
