@@ -26,7 +26,7 @@
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
     in {
       nixosConfigurations.nixos = lib.nixosSystem {
         specialArgs = { inherit inputs; };
@@ -38,6 +38,7 @@
 
       homeConfigurations = { hikiru = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+          extraSpecialArgs = { inherit inputs; };
           modules = [
             ./home-manager/home.nix
           ];

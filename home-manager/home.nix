@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "hikiru";
@@ -7,7 +7,13 @@
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
-    hello
+    brave
+    discord
+    kitty
+    zed-editor
+    nixd
+    lazygit
+    inputs.zen-browser.packages."${pkgs.system}".default
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
