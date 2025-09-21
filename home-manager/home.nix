@@ -8,7 +8,7 @@
 
   home.packages = with pkgs; [
     brave
-    discord
+    (discord.override { withVencord = true; })
     kitty
     zed-editor
     nixd
