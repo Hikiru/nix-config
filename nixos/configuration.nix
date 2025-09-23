@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    inputs.niri.nixosModules.niri
   ];
 
   # Storage optimization
@@ -102,8 +103,8 @@
 
   environment.variables.EDITOR = "nvim";
 
-  programs.niri.enable = true;
   programs.firefox.enable = true;
+  programs.niri.enable = true;
 
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.05";
 }

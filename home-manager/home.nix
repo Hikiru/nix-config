@@ -1,6 +1,12 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.zen-browser.homeModules.beta
+    inputs.dankMaterialShell.homeModules.dankMaterialShell
+    inputs.niri.homeModules.niri
+  ];
+
   home.username = "hikiru";
   home.homeDirectory = "/home/hikiru";
 
@@ -9,25 +15,34 @@
   home.packages = with pkgs; [
     brave
     (discord.override { withVencord = true; })
+    vesktop
     kitty
     zed-editor
     nixd
     lazygit
-    inputs.zen-browser.packages."${pkgs.system}".default
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
   ];
+
+  programs = {
+    zen-browser.enable = true;
+    niri.settings = {
+      binds = {
+        "Mod+1".action.focus-workspace = 1;
+        "Mod+2".action.focus-workspace = 2;
+        "Mod+3".action.focus-workspace = 3;
+        "Mod+4".action.focus-workspace = 4;
+        "Mod+5".action.focus-workspace = 5;
+        "Mod+6".action.focus-workspace = 6;
+        "Mod+7".action.focus-workspace = 7;
+        "Mod+8".action.focus-workspace = 8;
+        "Mod+9".action.focus-workspace = 9;
+      };
+    };
+    dankMaterialShell = {
+      enable = true;
+      enableKeybinds = true;
+      enableSpawn = true;
+    };
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
