@@ -18,8 +18,12 @@
     vesktop
     kitty
     zed-editor
+    evil-helix
     nixd
     lazygit
+    gcc
+    unzip
+    nodejs
   ];
 
   programs = {
