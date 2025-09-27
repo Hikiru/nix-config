@@ -91,6 +91,7 @@
     neovim
     wget
     gnumake
+    just
     fastfetch
     btop
     killall
