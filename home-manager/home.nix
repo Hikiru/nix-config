@@ -102,7 +102,7 @@
   #  /etc/profiles/per-user/hikiru/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "hx";
   };
 
   programs.home-manager.enable = true;
