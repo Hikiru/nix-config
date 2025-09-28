@@ -1,10 +1,11 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
     inputs.zen-browser.homeModules.beta
     inputs.dankMaterialShell.homeModules.dankMaterialShell
     inputs.niri.homeModules.niri
+    inputs.stylix.homeModules.stylix
   ];
 
   home.username = "hikiru";
@@ -13,12 +14,8 @@
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
-    brave
     (discord.override { withVencord = true; })
     vesktop
-    kitty
-    zed-editor
-    evil-helix
     nixd
     lazygit
     gcc
@@ -27,7 +24,20 @@
   ];
 
   programs = {
-    zen-browser.enable = true;
+    zen-browser = {
+      enable = true;
+      profiles.hikiru = {};
+    };
+
+    brave.enable = true;
+
+    zed-editor = {
+      enable = true;
+      userSettings = {
+        vim_mode = true;
+      };
+    };
+
     niri.settings = {
       binds = {
         "Mod+1".action.focus-workspace = 1;
@@ -41,13 +51,45 @@
         "Mod+9".action.focus-workspace = 9;
       };
     };
+
     dankMaterialShell = {
       enable = true;
       enableKeybinds = true;
       enableSpawn = true;
     };
+
+    kitty = {
+      enable = true;
+      shellIntegration.mode = "enabled";
+    };
+
+    helix = {
+      enable = true;
+      package = pkgs.evil-helix;
+      settings = {
+        editor = {
+          line-number = "relative";
+          file-picker.hidden = false;
+          cursor-shape = {
+            insert = "bar";
+            normal = "block";
+            select = "underline";
+          };
+        };
+      };
+    };
   };
 
+
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+    fonts.monospace = {
+      package = pkgs.nerd-fonts.caskaydia-cove;
+      name = "CaskaydiaCove Nerd Font";
+    };
+    targets.zen-browser.profileNames = [ "hikiru" ];
+  };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
