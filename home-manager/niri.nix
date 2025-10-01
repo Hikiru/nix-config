@@ -1,27 +1,58 @@
-{ inputs, ... }:
+{ config,  inputs, ... }:
 
 {
   imports = [
     inputs.niri.homeModules.niri
+    inputs.niri.homeModules.stylix
     inputs.dankMaterialShell.homeModules.dankMaterialShell
   ];
 
+  stylix.targets.niri.enable = true;
   programs = {
-    niri.settings = {
-      window-rules = {
-        geometry-corner-radius = 10;
-        clip-to-geometry = true;
-      };
-      binds = {
-        "Mod+1".action.focus-workspace = 1;
-        "Mod+2".action.focus-workspace = 2;
-        "Mod+3".action.focus-workspace = 3;
-        "Mod+4".action.focus-workspace = 4;
-        "Mod+5".action.focus-workspace = 5;
-        "Mod+6".action.focus-workspace = 6;
-        "Mod+7".action.focus-workspace = 7;
-        "Mod+8".action.focus-workspace = 8;
-        "Mod+9".action.focus-workspace = 9;
+    niri = {
+      enable = true;
+      settings = {
+        input.touchpad = {
+          tap = false;
+          scroll-factor = 0.5;
+        };
+
+        window-rules = [
+          {
+            geometry-corner-radius =
+              let
+                r = 8.0;
+              in
+              {
+                top-left = r;
+                top-right = r;
+                bottom-left = r;
+                bottom-right = r;
+              };
+            clip-to-geometry = true;
+          }
+        ];
+
+        binds = with config.lib.niri.actions; {
+          "Mod+Shift+Slash".action = show-hotkey-overlay;
+          "Mod+Q" = {
+            hotkey-overlay.title = "Open Terminal";
+            action.spawn = "kitty";
+          };
+          "Mod+C" = {
+            hotkey-overlay.title = "Close window";
+            action = close-window;
+          };
+          "Mod+1".action.focus-workspace = 1;
+          "Mod+2".action.focus-workspace = 2;
+          "Mod+3".action.focus-workspace = 3;
+          "Mod+4".action.focus-workspace = 4;
+          "Mod+5".action.focus-workspace = 5;
+          "Mod+6".action.focus-workspace = 6;
+          "Mod+7".action.focus-workspace = 7;
+          "Mod+8".action.focus-workspace = 8;
+          "Mod+9".action.focus-workspace = 9;
+        };
       };
     };
 
