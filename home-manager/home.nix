@@ -16,6 +16,7 @@
     (discord.override { withVencord = true; })
     vesktop
     nixd
+    nixfmt-rfc-style
     lazygit
     gcc
     unzip
@@ -25,7 +26,7 @@
   programs = {
     zen-browser = {
       enable = true;
-      profiles.hikiru = {};
+      profiles.hikiru = { };
     };
 
     brave.enable = true;
@@ -57,9 +58,16 @@
           };
         };
       };
+      languages = {
+        language = [
+          {
+            name = "nix";
+            formatter.command = "nixfmt";
+          }
+        ];
+      };
     };
   };
-
 
   stylix = {
     enable = true;
