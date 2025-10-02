@@ -18,6 +18,10 @@
     options = "--delete-older-than 30d";
   };
 
+  # FHS compat
+  services.envfs.enable = true;
+  programs.nix-ld.enable = true;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
