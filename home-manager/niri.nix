@@ -4,7 +4,8 @@
   imports = [
     inputs.niri.homeModules.niri
     inputs.niri.homeModules.stylix
-    inputs.dankMaterialShell.homeModules.dankMaterialShell
+    inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+    inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
   ];
 
   stylix.targets.niri.enable = true;
@@ -58,8 +59,8 @@
 
     dankMaterialShell = {
       enable = true;
-      enableKeybinds = true;
-      enableSpawn = true;
+      niri.enableKeybinds = true;
+      niri.enableSpawn = true;
     };
   };
 }
