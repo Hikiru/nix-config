@@ -78,10 +78,12 @@
   };
 
   services.flatpak.enable = true;
+  programs.fish.enable = true;
 
   users.users.hikiru = {
     isNormalUser = true;
     description = "Hikiru";
+    shell = pkgs.fish;
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -111,7 +113,6 @@
   environment.variables.EDITOR = "nvim";
 
   programs.firefox.enable = true;
-  programs.niri.enable = true;
 
   system.stateVersion = "25.05";
 }
