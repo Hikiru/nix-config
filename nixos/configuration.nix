@@ -110,6 +110,8 @@
     home-manager
   ];
 
+  fonts.packages = [ pkgs.nerd-fonts.caskaydia-cove ];
+
   environment.variables.EDITOR = "nvim";
 
   programs.firefox.enable = true;
