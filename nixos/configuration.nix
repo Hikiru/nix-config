@@ -58,6 +58,8 @@
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
 
+  programs.niri.enable = true;
+
   services.xserver.xkb = {
     layout = "us";
     variant = "";
