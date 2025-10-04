@@ -16,6 +16,7 @@
     (discord.override { withVencord = true; })
     vesktop
     nixd
+    nil
     nixfmt-rfc-style
     lazygit
     gcc
