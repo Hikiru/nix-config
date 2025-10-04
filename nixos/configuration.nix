@@ -18,6 +18,9 @@
     options = "--delete-older-than 30d";
   };
 
+  services.tlp.enable = true;
+  services.power-profiles-daemon.enable = false;
+
   # FHS compat
   services.envfs.enable = true;
   programs.nix-ld.enable = true;
