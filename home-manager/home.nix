@@ -22,10 +22,10 @@
     nixd
     nil
     nixfmt-rfc-style
-    lazygit
     gcc
     unzip
     nodejs
+    lazygit
   ];
 
   programs = {
@@ -72,6 +72,8 @@
         ];
       };
     };
+
+    yazi.enable = true;
   };
 
   stylix = {
