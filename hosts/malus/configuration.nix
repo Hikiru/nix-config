@@ -7,7 +7,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    inputs.niri.nixosModules.niri
   ];
 
   # Storage optimization
@@ -30,7 +29,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nixos";
+  networking.hostName = "malus";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -57,8 +56,6 @@
 
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
-
-  programs.niri.enable = true;
 
   services.xserver.xkb = {
     layout = "us";

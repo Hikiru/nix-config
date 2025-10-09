@@ -48,10 +48,11 @@
       };
     in
     {
-      nixosConfigurations.nixos = lib.nixosSystem {
+      nixosConfigurations.malus = lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          ./nixos/configuration.nix
+          ./hosts/malus/configuration.nix
+          ./nixosModules
         ];
       };
 

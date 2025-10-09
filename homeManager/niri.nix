@@ -12,9 +12,10 @@
     inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
   ];
 
-  stylix.targets.niri.enable = true;
-  xdg.configFile.".config/niri" = {
+  stylix.targets.niri.enable = false;
+  xdg.configFile."niri/" = {
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/config/niri";
+    # source = config.lib.file.mkOutOfStoreSymlink "../config/niri";
     recursive = true;
   };
   programs = {
