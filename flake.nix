@@ -41,6 +41,7 @@
     }@inputs:
     let
       lib = nixpkgs.lib;
+      myLib = import ./myLib { inherit lib; };
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
