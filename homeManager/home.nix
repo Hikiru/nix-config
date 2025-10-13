@@ -25,6 +25,7 @@
     gcc
     unzip
     nodejs
+    python3
     lazygit
   ];
 
