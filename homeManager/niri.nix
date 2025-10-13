@@ -13,11 +13,6 @@
   ];
 
   stylix.targets.niri.enable = false;
-  xdg.configFile."niri/" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/config/niri";
-    # source = config.lib.file.mkOutOfStoreSymlink "../config/niri";
-    recursive = true;
-  };
   programs = {
     niri = {
       enable = true;

@@ -41,6 +41,7 @@
     }@inputs:
     let
       lib = nixpkgs.lib;
+      myLib = import ./myLib { inherit lib; };
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
@@ -49,7 +50,7 @@
     in
     {
       nixosConfigurations.malus = lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs myLib; };
         modules = [
           ./hosts/malus/configuration.nix
           ./nixosModules
@@ -58,9 +59,9 @@
 
       homeConfigurations.hikiru = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = { inherit inputs myLib; };
         modules = [
-          ./home-manager/home.nix
+          ./homeManager/home.nix
         ];
       };
     };

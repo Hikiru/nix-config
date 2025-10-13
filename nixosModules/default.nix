@@ -1,6 +1,4 @@
+{ myLib, ... }:
 {
-  imports = [
-    ./cosmic.nix
-    ./niri.nix
-  ];
+  imports = myLib.scanPaths ./.;
 }
