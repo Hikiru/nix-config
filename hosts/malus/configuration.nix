@@ -53,9 +53,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.displayManager.cosmic-greeter.enable = true;
-  services.desktopManager.cosmic.enable = true;
-
   services.xserver.xkb = {
     layout = "us";
     variant = "";
