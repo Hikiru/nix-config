@@ -14,7 +14,7 @@
   stylix.targets.niri.enable = false;
   programs = {
     niri = {
-      enable = true;
+      enable = false;
       # settings = {
       #   input.touchpad = {
       #     tap = false;
