@@ -49,14 +49,22 @@
       };
     in
     {
-      nixosConfigurations.malus = lib.nixosSystem {
-        specialArgs = { inherit inputs myLib; };
-        modules = [
-          ./hosts/malus/configuration.nix
-          ./nixosModules
-        ];
+      nixosConfigurations = {
+        anura = lib.nixosSystem {
+          specialArgs = { inherit inputs myLib; };
+          modules = [
+            ./hosts/anura/configuration.nix
+            ./nixosModules
+          ];
+        };
+        malus = lib.nixosSystem {
+          specialArgs = { inherit inputs myLib; };
+          modules = [
+            ./hosts/malus/configuration.nix
+            ./nixosModules
+          ];
+        };
       };
-
       homeConfigurations.hikiru = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit inputs myLib; };
