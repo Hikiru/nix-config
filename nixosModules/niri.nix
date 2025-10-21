@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -6,4 +6,5 @@
   ];
 
   programs.niri.enable = true;
+  programs.niri.package = pkgs.niri;
 }
