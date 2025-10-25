@@ -56,6 +56,8 @@
     #jack.enable = true;
   };
 
+  xdg.icons.fallbackCursorThemes = [ "Adwaita" ];
+
   services.flatpak.enable = true;
   programs.firefox.enable = true;
   programs.fish.enable = true;
