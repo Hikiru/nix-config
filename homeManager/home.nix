@@ -19,6 +19,7 @@
   home.packages = with pkgs; [
     (discord.override { withVencord = true; })
     vesktop
+    youtube-music
     nixd
     nil
     nixfmt-rfc-style
@@ -27,6 +28,7 @@
     nodejs
     python3
     lazygit
+    chezmoi # chezmoi in home manager config? shameful!
   ];
 
   programs = {
