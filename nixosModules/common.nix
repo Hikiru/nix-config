@@ -16,6 +16,11 @@
   services.envfs.enable = true;
   programs.nix-ld.enable = true;
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
