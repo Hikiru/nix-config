@@ -6,6 +6,7 @@ system:
 
 all:
 	sudo nixos-rebuild switch --flake .
+	sleep 1
 	home-manager switch --flake .
 
 update:
