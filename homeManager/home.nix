@@ -77,6 +77,14 @@
     };
 
     yazi.enable = true;
+
+    btop = {
+      enable = true;
+      settings = {
+        "theme_color" = "TTY";
+        "vim_keys" = true;
+      };
+    };
   };
 
   stylix = {
