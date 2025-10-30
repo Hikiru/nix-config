@@ -29,6 +29,7 @@
     python3
     lazygit
     chezmoi # chezmoi in home manager config? shameful!
+    pywal16
   ];
 
   programs = {
@@ -88,7 +89,7 @@
   };
 
   stylix = {
-    enable = true;
+    enable = false;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     fonts.monospace = {
       package = pkgs.nerd-fonts.caskaydia-cove;
