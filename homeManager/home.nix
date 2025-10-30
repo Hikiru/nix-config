@@ -8,7 +8,7 @@
   imports = [
     inputs.zen-browser.homeModules.beta
     inputs.stylix.homeModules.stylix
-    ./niri.nix
+    ./dms.nix
   ];
 
   home.username = "hikiru";
