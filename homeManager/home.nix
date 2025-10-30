@@ -20,6 +20,7 @@
     (discord.override { withVencord = true; })
     vesktop
     youtube-music
+    kitty
     nixd
     nil
     nixfmt-rfc-style
