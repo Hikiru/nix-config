@@ -27,6 +27,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.networkmanager.enable = true;
+  programs.nm-applet.enable = false;
 
   time.timeZone = "America/Chicago";
 
