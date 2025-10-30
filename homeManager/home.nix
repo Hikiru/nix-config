@@ -30,6 +30,7 @@
     lazygit
     chezmoi # chezmoi in home manager config? shameful!
     pywal16
+    nerd-font.caskaydia-cove
   ];
 
   programs = {
@@ -45,35 +46,6 @@
       enable = true;
       userSettings = {
         vim_mode = true;
-      };
-    };
-
-    kitty = {
-      enable = true;
-      shellIntegration.mode = "enabled";
-    };
-
-    helix = {
-      enable = true;
-      package = pkgs.evil-helix;
-      settings = {
-        editor = {
-          line-number = "relative";
-          file-picker.hidden = false;
-          cursor-shape = {
-            insert = "bar";
-            normal = "block";
-            select = "underline";
-          };
-        };
-      };
-      languages = {
-        language = [
-          {
-            name = "nix";
-            formatter.command = "nixfmt";
-          }
-        ];
       };
     };
 
