@@ -8,7 +8,7 @@
     inputs.dankMaterialShell.homeModules.dankMaterialShell.default
   ];
 
-  dankMaterialShell = {
+  programs.dankMaterialShell = {
     enable = true;
   };
 }

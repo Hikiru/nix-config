@@ -5,6 +5,13 @@
     inputs.niri.nixosModules.niri
   ];
 
-  programs.niri.enable = true;
-  programs.niri.package = pkgs.niri;
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri;
+  };
+
+  environment.systemPackages = with pkgs; [
+    xwayland-satellite
+    xsettingsd
+  ];
 }
