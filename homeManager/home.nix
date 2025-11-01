@@ -20,7 +20,11 @@
     (discord.override { withVencord = true; })
     vesktop
     youtube-music
+    nautilus
+    nautilus-open-any-terminal
+    loupe
     kitty
+    starship
     nixd
     nil
     nixfmt-rfc-style
