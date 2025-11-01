@@ -65,6 +65,20 @@
     };
   };
 
+  gtk = {
+    enable = true;
+    colorScheme = "dark";
+    font = {
+      name = "DejaVu Sans";
+      package = pkgs.dejavu_fonts;
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "qtct";
+  };
+
   stylix = {
     enable = false;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
