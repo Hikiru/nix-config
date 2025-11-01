@@ -19,6 +19,10 @@
     ];
   };
 
+  environment.systemPackages = with pkgs; [
+    heroic
+  ];
+
   fileSystems = {
     "/".options = [ "compress=zstd" ];
     "/home".options = [ "compress=zstd" ];

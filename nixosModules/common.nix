@@ -62,6 +62,11 @@
     #jack.enable = true;
   };
 
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
+  ];
+
   services.flatpak.enable = true;
   programs.firefox.enable = true;
   programs.fish.enable = true;
@@ -90,7 +95,13 @@
     home-manager
   ];
 
-  fonts.packages = [ pkgs.nerd-fonts.caskaydia-cove ];
+  fonts = {
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-color-emoji
+      nerd-fonts.caskaydia-cove
+    ];
+  };
 
   environment.variables.EDITOR = "nvim";
 
