@@ -14,8 +14,6 @@
   home.username = "hikiru";
   home.homeDirectory = "/home/hikiru";
 
-  home.stateVersion = "25.05";
-
   home.packages = with pkgs; [
     (discord.override { withVencord = true; })
     vesktop
@@ -34,8 +32,7 @@
     python3
     lazygit
     chezmoi # chezmoi in home manager config? shameful!
-    pywal16
-    nerd-fonts.caskaydia-cove
+    wallust
   ];
 
   programs = {
@@ -68,6 +65,10 @@
   gtk = {
     enable = true;
     colorScheme = "dark";
+    gtk3.theme = {
+      name = "adw-gtk3";
+      package = pkgs.adw-gtk3;
+    };
     font = {
       name = "DejaVu Sans";
       package = pkgs.dejavu_fonts;
@@ -117,4 +118,6 @@
   };
 
   programs.home-manager.enable = true;
+
+  home.stateVersion = "25.05";
 }
