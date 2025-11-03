@@ -7,7 +7,6 @@
 {
   imports = [
     inputs.zen-browser.homeModules.beta
-    inputs.stylix.homeModules.stylix
     ./dms.nix
   ];
 
@@ -20,6 +19,8 @@
     youtube-music
     nautilus
     nautilus-open-any-terminal
+    obs-studio
+    gpu-screen-recorder
     loupe
     kitty
     starship
@@ -78,17 +79,8 @@
 
   qt = {
     enable = true;
-    style.name = "kvantum";
-  };
-
-  stylix = {
-    enable = false;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-    fonts.monospace = {
-      package = pkgs.nerd-fonts.caskaydia-cove;
-      name = "CaskaydiaCove Nerd Font";
-    };
-    targets.zen-browser.profileNames = [ "hikiru" ];
+    platformTheme.name = "qtct";
+    style.name = "breeze";
   };
 
   home.file = {
