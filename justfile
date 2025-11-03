@@ -11,6 +11,7 @@ all:
 
 update:
 	nix flake update --commit-lock-file
+	just all
 
 clean:
 	nix-collect-garbage -d
