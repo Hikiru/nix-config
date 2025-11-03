@@ -63,9 +63,10 @@
   };
 
   gtk = {
+    gtk4.enable = false;
     enable = true;
     colorScheme = "dark";
-    gtk3.theme = {
+    theme = {
       name = "adw-gtk3";
       package = pkgs.adw-gtk3;
     };
@@ -77,7 +78,7 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "qtct";
+    style.name = "kvantum";
   };
 
   stylix = {
