@@ -11,8 +11,6 @@
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
-      # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
-      # to have it up-to-date or simply don't specify the nixpkgs input
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -31,7 +29,7 @@
     }@inputs:
     let
       lib = nixpkgs.lib;
-      myLib = import ./myLib { inherit lib; };
+      myLib = import ./myLib { inherit pkgs; };
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
@@ -42,15 +40,15 @@
       nixosConfigurations = {
         anura = lib.nixosSystem {
           specialArgs = { inherit inputs myLib; };
-          modules = [
-            ./hosts/anura/configuration.nix
+          modules = myLib.recursivelyImport [
+            ./hosts/anura
             ./nixosModules
           ];
         };
         malus = lib.nixosSystem {
           specialArgs = { inherit inputs myLib; };
-          modules = [
-            ./hosts/malus/configuration.nix
+          modules = myLib.recursivelyImport [
+            ./hosts/malus
             ./nixosModules
           ];
         };

@@ -1,18 +1,7 @@
-{ lib, ... }:
+{ pkgs }:
+let
+  inherit (pkgs) callPackage;
+in
 {
-  # credit to ryan4yin for this
-  scanPaths =
-    path:
-    builtins.map (f: (path + "/${f}")) (
-      builtins.attrNames (
-        lib.attrsets.filterAttrs (
-          path: _type:
-          (_type == "directory") # include directories
-          || (
-            (path != "default.nix") # ignore default.nix
-            && (lib.strings.hasSuffix ".nix" path) # include .nix files
-          )
-        ) (builtins.readDir path)
-      )
-    );
+  recursivelyImport = callPackage ./recursivelyImport.nix { };
 }
