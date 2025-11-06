@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     xwayland-satellite
     xsettingsd
+    swayidle
   ];
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
