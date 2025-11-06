@@ -15,8 +15,11 @@
     ];
   };
 
+  services.logind.settings.Login.HandlePowerKey = "poweroff";
+
   environment.systemPackages = with pkgs; [
     heroic
+    mangohud
   ];
 
   fileSystems = {
