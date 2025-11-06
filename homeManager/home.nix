@@ -14,14 +14,13 @@
   home.homeDirectory = "/home/hikiru";
 
   home.packages = with pkgs; [
+    gnome-software
+    nautilus
+    loupe
     (discord.override { withVencord = true; })
     vesktop
     youtube-music
-    nautilus
-    nautilus-open-any-terminal
     obs-studio
-    gpu-screen-recorder
-    loupe
     kitty
     starship
     nixd
@@ -39,7 +38,7 @@
   programs = {
     zen-browser = {
       enable = true;
-      profiles.hikiru = { };
+      profiles.default = { };
     };
 
     brave.enable = true;
@@ -64,10 +63,13 @@
   };
 
   gtk = {
-    gtk4.enable = false;
     enable = true;
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
     colorScheme = "dark";
-    theme = {
+    gtk3.theme = {
       name = "adw-gtk3";
       package = pkgs.adw-gtk3;
     };
@@ -80,7 +82,7 @@
   qt = {
     enable = true;
     platformTheme.name = "qtct";
-    style.name = "breeze";
+    style.name = "Breeze";
   };
 
   home.file = {
