@@ -21,6 +21,8 @@
     binfmt = true;
   };
 
+  services.gvfs.enable = true;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -61,6 +63,8 @@
     pulse.enable = true;
     #jack.enable = true;
   };
+
+  services.playerctld.enable = true;
 
   xdg.portal.extraPortals = with pkgs; [
     xdg-desktop-portal-gtk
