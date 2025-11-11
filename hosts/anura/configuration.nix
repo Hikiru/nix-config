@@ -15,6 +15,9 @@
     ];
   };
 
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   services.logind.settings.Login.HandlePowerKey = "poweroff";
 
   environment.systemPackages = with pkgs; [
