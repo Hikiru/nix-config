@@ -4,6 +4,9 @@ home:
 system:
 	sudo nixos-rebuild switch --flake .
 
+test:
+	sudo nixos-rebuild test --flake .
+
 all:
 	sudo nixos-rebuild switch --flake .
 	sleep 1
