@@ -20,6 +20,7 @@
   environment.systemPackages = with pkgs; [
     heroic
     mangohud
+    (pkgs.callPackage ../.././derivations/scopebuddy.nix { })
   ];
 
   fileSystems = {
