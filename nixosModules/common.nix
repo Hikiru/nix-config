@@ -87,23 +87,12 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    git
-    neovim
-    wget
-    gnumake
-    just
-    fastfetch
-    btop
-    killall
-    home-manager
-  ];
-
   fonts = {
     packages = with pkgs; [
       noto-fonts
       noto-fonts-color-emoji
       nerd-fonts.caskaydia-cove
+      dejavu_fonts
     ];
   };
 
