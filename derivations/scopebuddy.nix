@@ -29,6 +29,6 @@ stdenv.mkDerivation (finalAttrs: {
     mainProgram = "scopebuddy";
     homepage = "https://github.com/HikariKnight/ScopeBuddy";
     license = licenses.asl20;
-    maintainers = with maintainers; [ hikiru ];
+    maintainers = with maintainers; [ Hikiru ];
   };
 })
