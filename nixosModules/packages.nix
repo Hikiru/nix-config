@@ -41,7 +41,7 @@
     kdePackages.qt6ct
 
     # Dev
-    zed-editor-fhs
+    zed-editor
     neovim
     git
     lazygit
