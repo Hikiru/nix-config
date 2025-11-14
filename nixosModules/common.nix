@@ -31,6 +31,8 @@
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = false;
 
+  hardware.bluetooth.enable = true;
+
   time.timeZone = "America/Chicago";
 
   i18n.defaultLocale = "en_US.UTF-8";
