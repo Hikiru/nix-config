@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  ...
 }:
 
 {
@@ -29,7 +30,7 @@
     youtube-music
 
     # Utilities
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     obs-studio
     obs-studio-plugins.obs-vaapi
     obs-studio-plugins.obs-vkcapture
@@ -40,7 +41,7 @@
     kdePackages.qt6ct
 
     # Dev
-    zed
+    zed-editor-fhs
     neovim
     git
     lazygit
