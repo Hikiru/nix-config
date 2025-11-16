@@ -8,17 +8,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1763088855,
-        "narHash": "sha256-RDRlVSMvirSPGloWvCjDICcYTpNeZe4NvPNoofY5amI=",
-        "owner": "AvengeMedia",
-        "repo": "DankMaterialShell",
-        "rev": "ed06dda3846ec03e44d9a5b77aad0ccb61b4d3d1",
-        "type": "github"
+        "lastModified": 1763278151,
+        "narHash": "sha256-EhuobnjhG0sBsjNtDLtgCb00aux/cSCcaZbZAnnzB/0=",
+        "ref": "refs/heads/master",
+        "rev": "db21d83df990921bc0a149a84ce3a720590138bc",
+        "revCount": 2034,
+        "type": "git",
+        "url": "file:///home/hikiru/Projects/DankMaterialShell"
       },
       "original": {
-        "owner": "AvengeMedia",
-        "repo": "DankMaterialShell",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/hikiru/Projects/DankMaterialShell"
       }
     },
     "dgop": {
@@ -50,11 +50,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762351818,
-        "narHash": "sha256-0ptUDbYwxv1kk/uzEX4+NJjY2e16MaAhtzAOJ6K0TG0=",
+        "lastModified": 1762964643,
+        "narHash": "sha256-RYHN8O/Aja59XDji6WSJZPkJpYVUfpSkyH+PEupBJqM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b959c67241cae17fc9e4ee7eaf13dfa8512477ea",
+        "rev": "827f2a23373a774a8805f84ca5344654c31f354b",
         "type": "github"
       },
       "original": {
@@ -94,11 +94,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763007974,
-        "narHash": "sha256-XMgjrDIHonLqIjc1eMQkLeemGcNqqYU0Dq+zNmeMYOI=",
+        "lastModified": 1763310159,
+        "narHash": "sha256-eUNU91X8+2D4j0nIDZmg/TVNVXE9Vlog2kGMIiB5uPY=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "eff1c79c78950ebb4ce70c3d51513e294cf30b52",
+        "rev": "232199e68c50bd9d4228d8ffdb0056e6993dacbd",
         "type": "github"
       },
       "original": {
