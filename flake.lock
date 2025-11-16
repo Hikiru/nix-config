@@ -8,11 +8,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763278151,
-        "narHash": "sha256-EhuobnjhG0sBsjNtDLtgCb00aux/cSCcaZbZAnnzB/0=",
+        "lastModified": 1763281898,
+        "narHash": "sha256-3v3P2vCX0OhAI/hEP7BWJTN1dfwqZh0AZn34IJzdZ48=",
         "ref": "refs/heads/master",
-        "rev": "db21d83df990921bc0a149a84ce3a720590138bc",
-        "revCount": 2034,
+        "rev": "67cfa068a85fadaf1ad52e6b74365d13f16f6705",
+        "revCount": 2035,
         "type": "git",
         "url": "file:///home/hikiru/Projects/DankMaterialShell"
       },
