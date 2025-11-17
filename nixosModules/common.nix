@@ -73,6 +73,8 @@
     xdg-desktop-portal-gnome
   ];
 
+  xdg.icons.enable = true;
+
   services.flatpak.enable = true;
   programs.firefox.enable = true;
   programs.fish.enable = true;
