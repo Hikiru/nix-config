@@ -7,12 +7,15 @@
 {
   environment.systemPackages = with pkgs; [
     # DE stuff/dots
+    kdePackages.breeze
     adwaita-icon-theme
     gnome-software
     nautilus
+    file-roller
     ffmpegthumbnailer
     unzip
     loupe
+    celluloid
     chezmoi # chezmoi on NixOS? shameful!
     wallust
 
@@ -29,6 +32,11 @@
     vesktop
     youtube-music
 
+    # Creative
+    gimp
+    krita
+    pixieditor
+
     # Utilities
     onlyoffice-desktopeditors
     obs-studio
@@ -37,8 +45,12 @@
     gpu-screen-recorder-gtk
     easyeffects
     video-trimmer
+    upscayl
+    localsend
+    tailscale
     libsForQt5.qt5ct
     kdePackages.qt6ct
+    gearlever
 
     # Dev
     zed-editor
@@ -53,5 +65,4 @@
     gnumake
     just
   ];
-
 }
