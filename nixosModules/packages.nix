@@ -6,9 +6,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # DE stuff/dots
-    kdePackages.breeze
-    adwaita-icon-theme
+    # DE stuff
     gnome-software
     nautilus
     file-roller
@@ -18,6 +16,16 @@
     celluloid
     chezmoi # chezmoi on NixOS? shameful!
     wallust
+
+    # Theming
+    libsForQt5.qt5ct
+    kdePackages.qt6ct
+    libsForQt5.qtstyleplugin-kvantum
+    kdePackages.qtstyleplugin-kvantum
+    kdePackages.breeze
+    kdePackages.breeze.qt5
+    papirus-icon-theme
+    adwaita-icon-theme
 
     # Terminal
     kitty
@@ -50,8 +58,6 @@
     tailscale
     protonvpn-gui
     qbittorrent
-    libsForQt5.qt5ct
-    kdePackages.qt6ct
     gearlever
 
     # Dev
