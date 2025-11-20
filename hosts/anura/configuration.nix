@@ -15,6 +15,16 @@
     ];
   };
 
+  services.wivrn = {
+    enable = true;
+    openFirewall = true;
+    highPriority = true;
+    defaultRuntime = true;
+    steam.importOXRRuntimes = true;
+  };
+
+  services.lact.enable = true;
+
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
@@ -24,6 +34,8 @@
     heroic
     mangohud
     (pkgs.callPackage ../.././derivations/scopebuddy.nix { })
+    wlx-overlay-s
+    wayvr-dashboard
   ];
 
   fileSystems = {
