@@ -13,6 +13,11 @@
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    xwayland-satellite = {
+      url = "github:Supreeeme/xwayland-satellite";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
