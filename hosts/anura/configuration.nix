@@ -25,6 +25,12 @@
 
   services.lact.enable = true;
 
+  services.sunshine = {
+    enable = true;
+    openFirewall = true;
+    autoStart = true;
+  };
+
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
