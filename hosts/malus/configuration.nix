@@ -11,6 +11,7 @@
   };
   services.tlp.enable = true;
   services.power-profiles-daemon.enable = false;
+  services.mbpfan.enable = true;
 
   networking.hostName = "malus";
 
