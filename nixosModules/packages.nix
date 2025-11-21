@@ -54,7 +54,6 @@
     easyeffects
     video-trimmer
     upscayl
-    localsend
     tailscale
     protonvpn-gui
     qbittorrent
