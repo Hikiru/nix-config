@@ -66,6 +66,8 @@
     #jack.enable = true;
   };
 
+  services.upower.enable = true;
+
   services.playerctld.enable = true;
 
   xdg.portal.extraPortals = with pkgs; [
