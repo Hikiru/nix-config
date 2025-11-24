@@ -14,10 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    xwayland-satellite = {
-      url = "github:Supreeeme/xwayland-satellite";
+    winapps = {
+      url = "github:winapps-org/winapps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
   outputs =

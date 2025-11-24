@@ -46,6 +46,8 @@
     pixieditor
 
     # Utilities
+    inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps
+    inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps-launcher
     onlyoffice-desktopeditors
     obs-studio
     obs-studio-plugins.obs-vaapi
