@@ -67,15 +67,19 @@ in
       autoStart = lib.mkIf cfg.streaming.sunshine.autoStart true;
     };
 
-    environment.systemPackages = [
-      pkgs.heroic
-      pkgs.mangohud
-      (pkgs.callPackage .././derivations/scopebuddy.nix { })
-    ]
-    ++ lib.optionals cfg.vr.enable [
-      pkgs.wlx-overlay-s
-      pkgs.wayvr-dashboard
-    ]
-    ++ lib.optional cfg.streaming.moonlight.enable pkgs.moonlight-qt;
+    environment.systemPackages =
+      with pkgs;
+      [
+        heroic
+        sgdboop
+        mangohud
+        gamescope
+        (callPackage .././derivations/scopebuddy.nix { })
+      ]
+      ++ lib.optionals cfg.vr.enable [
+        wlx-overlay-s
+        wayvr-dashboard
+      ]
+      ++ lib.optional cfg.streaming.moonlight.enable moonlight-qt;
   };
 }
