@@ -3,5 +3,5 @@ let
   inherit (pkgs) callPackage;
 in
 {
-  recursivelyImport = callPackage ./recursivelyImport.nix { };
+  recursivelyImport = callPackage ./recursively-import.nix { };
 }
