@@ -26,6 +26,7 @@
     kdePackages.breeze.qt5
     papirus-icon-theme
     adwaita-icon-theme
+    (pkgs.callPackage .././derivations/palettum.nix { })
 
     # Terminal
     kitty
