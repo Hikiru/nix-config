@@ -1,48 +1,16 @@
 {
-  pkgs,
-  ...
-}:
-
-{
-  programs.steam = {
+  gaming = {
     enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-    gamescopeSession.enable = true;
-    extraCompatPackages = with pkgs; [
-      proton-ge-bin
-    ];
-  };
-
-  services.wivrn = {
-    enable = true;
-    openFirewall = true;
-    highPriority = true;
-    defaultRuntime = true;
-    steam.importOXRRuntimes = true;
+    vr.enable = true;
+    streaming.enable = true;
   };
 
   services.lact.enable = true;
-
-  services.sunshine = {
-    enable = true;
-    openFirewall = true;
-    autoStart = true;
-  };
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
   services.logind.settings.Login.HandlePowerKey = "poweroff";
-
-  environment.systemPackages = with pkgs; [
-    heroic
-    mangohud
-    (pkgs.callPackage ../.././derivations/scopebuddy.nix { })
-    wlx-overlay-s
-    wayvr-dashboard
-  ];
 
   fileSystems = {
     "/".options = [ "compress=zstd" ];
