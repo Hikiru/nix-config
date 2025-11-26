@@ -1,40 +1,54 @@
 {
   lib,
-  stdenv,
-  fetchurl,
+  rustPlatform,
+  fetchFromGitHub,
+  pkg-config,
+  ffmpeg_7,
+  vulkan-loader,
+  versionCheckHook,
+  nix-update-script,
 }:
 
-stdenv.mkDerivation rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "palettum";
   version = "0.6.1";
 
-  src = fetchurl {
-    url = "https://github.com/arrowpc/palettum/releases/download/v${version}/palettum-x86_64-unknown-linux-gnu.tar.gz";
-    hash = "sha256-tJXAuXIx6Ixd0AZV/DZiMv4sKQ+y5tP0wXwXmCd8Fhw=";
+  src = fetchFromGitHub {
+    owner = "arrowpc";
+    repo = "palettum";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-xJGXLJPsfrU/BiS2GuEoJNbXaQZbbkZaArf4otiUqqA=";
   };
 
-  dontBuild = true;
+  cargoHash = "sha256-c1Xx7U7OU9hcjHNEkFAJ1dYksZq0rL6QcSKGGXuUJYY=";
 
-  unpackPhase = ''
-    runHook preUnpack
-    mkdir -p $TMP/palettum
-    cd $TMP/palettum
-    tar -z -xf $src
-    runHook postUnpack
-  '';
+  nativeBuildInputs = [
+    pkg-config
+    rustPlatform.bindgenHook
+  ];
 
-  installPhase = ''
-    runHook preInstall
-    mkdir -p $out/bin/
-    cp palettum $out/bin/
-    runHook postInstall
-  '';
+  buildInputs = [
+    ffmpeg_7
+    vulkan-loader
+  ];
 
-  meta = with lib; {
-    description = "Web app and CLI tool that lets you recolor images, GIFs, and videos with any custom palette of your choosing.";
-    mainProgram = "palettum";
+  doInstallCheck = true;
+  nativeInstallCheckInputs = [ versionCheckHook ];
+
+  passthru.updateScript = nix-update-script { };
+
+  meta = {
+    description = "CLI tool that lets you recolor images, GIFs and videos";
+    longDescription = ''
+      Palettum is a web app and CLI tool that lets you recolor images,
+      GIFs, and videos with any custom palette of your choosing. It
+      lets you apply any custom palette by either snapping each pixel
+      to its closest color (ideal for pixel-art styles), or blending
+      the palette as a filter for a smoother effect.
+    '';
     homepage = "https://github.com/arrowpc/palettum";
-    license = licenses.agpl3Only;
-    maintainers = with maintainers; [ Hikiru ];
+    license = lib.licenses.agpl3Only;
+    maintainers = with lib.maintainers; [ yiyu ];
+    mainProgram = "palettum";
   };
-}
+})
