@@ -9,4 +9,4 @@ update:
 	just
 
 clean:
-	nix-collect-garbage -d
+	sudo nix-collect-garbage -d
