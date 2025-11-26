@@ -78,6 +78,7 @@
   xdg.icons.enable = true;
 
   services.flatpak.enable = true;
+  services.tailscale.enable = true;
   programs.firefox.enable = true;
   programs.fish.enable = true;
   programs.localsend = {

@@ -57,7 +57,6 @@
     easyeffects
     video-trimmer
     upscayl
-    tailscale
     protonvpn-gui
     qbittorrent
     gearlever
