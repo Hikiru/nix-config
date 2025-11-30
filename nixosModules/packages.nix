@@ -10,6 +10,8 @@
     gnome-software
     nautilus
     file-roller
+    xdg-user-dirs
+    xdg-user-dirs-gtk
     ffmpegthumbnailer
     unzip
     loupe
@@ -24,6 +26,7 @@
     kdePackages.qtstyleplugin-kvantum
     kdePackages.breeze
     kdePackages.breeze.qt5
+    adw-gtk3
     papirus-icon-theme
     adwaita-icon-theme
     (pkgs.callPackage .././derivations/palettum.nix { })
