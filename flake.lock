@@ -8,11 +8,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764480924,
-        "narHash": "sha256-FraqQ0S2kXGirGWBOWe614ft2Kcqqj2qdHMFVEsqodE=",
+        "lastModified": 1764519675,
+        "narHash": "sha256-PwuecbQSdQaOBGj53YovMmx80+C+4tC0GwTSXC4hEi4=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "4eee126d267b98e9425cff55a5f2f0c2a5a69bed",
+        "rev": "cbd1fd908cb10a4088988a71c8af99fc312ff1f1",
         "type": "github"
       },
       "original": {
@@ -180,11 +180,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763586102,
-        "narHash": "sha256-BWQXLnX0JpK+Wcs2gOXMId0iAoPaIsc3xHLzZc2q05Y=",
+        "lastModified": 1764521817,
+        "narHash": "sha256-mBQzTYUukEyhGyy6MJMSaWCzBCyZWZuIUNdcQ0s+Ffg=",
         "owner": "winapps-org",
         "repo": "winapps",
-        "rev": "b4766336903d0cbe768d2ca7e8bb4b8a5951d0f2",
+        "rev": "dc77dc6e863a25aa02327ff48ab367329308b725",
         "type": "github"
       },
       "original": {
