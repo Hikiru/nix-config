@@ -67,6 +67,8 @@
     # Dev
     zed-editor
     neovim
+    godotPackages_4_3.godot
+    godot
     git
     lazygit
     wget
