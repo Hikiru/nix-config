@@ -1,12 +1,16 @@
 { pkgs, ... }:
 
 {
-  virtualisation.docker = {
+  # virtualisation.docker = {
+  #   enable = true;
+  #   rootless = {
+  #     enable = true;
+  #     setSocketVariable = true;
+  #   };
+  # };
+  virtualisation.podman = {
     enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
+    dockerCompat = true;
   };
 
   users.users.hikiru.extraGroups = [ "docker" ];
