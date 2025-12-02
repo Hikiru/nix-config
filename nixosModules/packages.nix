@@ -48,6 +48,7 @@
     gimp
     krita
     pixieditor
+    reaper
 
     # Utilities
     inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps
