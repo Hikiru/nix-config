@@ -43,6 +43,7 @@
     (discord.override { withVencord = true; })
     vesktop
     youtube-music
+    spotify
 
     # Creative
     gimp
