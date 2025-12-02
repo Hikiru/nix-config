@@ -9,4 +9,4 @@ update:
 	just
 
 clean:
-	sudo nix-collect-garbage -d
+	sudo nix-collect-garbage --delete-older-than 7d
