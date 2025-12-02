@@ -41,21 +41,20 @@
       };
     in
     {
-      nixosConfigurations = {
-        anura = lib.nixosSystem {
-          specialArgs = { inherit inputs myLib; };
-          modules = myLib.recursivelyImport [
-            ./hosts/anura
-            ./nixosModules
-          ];
-        };
-        malus = lib.nixosSystem {
-          specialArgs = { inherit inputs myLib; };
-          modules = myLib.recursivelyImport [
-            ./hosts/malus
-            ./nixosModules
-          ];
-        };
-      };
+      nixosConfigurations =
+        let
+          hosts = builtins.attrNames (builtins.readDir ./hosts);
+
+          mkHost =
+            hostName:
+            lib.nixosSystem {
+              specialArgs = { inherit inputs myLib; };
+              modules = myLib.recursivelyImport [
+                (./hosts + "/${hostName}")
+                ./nixosModules
+              ];
+            };
+        in
+        lib.genAttrs hosts mkHost;
     };
 }
