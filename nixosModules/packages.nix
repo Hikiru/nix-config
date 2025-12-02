@@ -52,6 +52,8 @@
     # Utilities
     inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps
     inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps-launcher
+    distrobox
+    distroshelf
     onlyoffice-desktopeditors
     obs-studio
     obs-studio-plugins.obs-vaapi
