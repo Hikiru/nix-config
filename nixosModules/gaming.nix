@@ -58,7 +58,7 @@ in
       openFirewall = true;
       highPriority = true;
       defaultRuntime = true;
-      steam.importOXRRuntimes = true;
+      # steam.importOXRRuntimes = true;
     };
 
     services.sunshine = lib.mkIf cfg.streaming.sunshine.enable {
@@ -71,6 +71,7 @@ in
       with pkgs;
       [
         heroic
+        prismlauncher
         sgdboop
         mangohud
         gamescope
