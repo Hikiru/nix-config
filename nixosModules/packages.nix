@@ -42,13 +42,14 @@
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     (discord.override { withVencord = true; })
     vesktop
-    youtube-music
+    pear-desktop
     spotify
 
     # Creative
     gimp
     krita
     pixieditor
+    # aseprite
     reaper
 
     # Utilities
@@ -64,9 +65,11 @@
     easyeffects
     video-trimmer
     upscayl
+    ffmpeg
     protonvpn-gui
     qbittorrent
     gearlever
+    rpi-imager
 
     # Dev
     zed-editor
@@ -82,5 +85,8 @@
     python3
     gnumake
     just
+
+    # Misc
+    icu
   ];
 }
