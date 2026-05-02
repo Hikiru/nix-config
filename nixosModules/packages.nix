@@ -37,11 +37,14 @@
     yazi
     btop
     fastfetch
+    rmpc
+    mpd
 
     # GUI
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     (discord.override { withVencord = true; })
     vesktop
+    stoat-desktop
     pear-desktop
     spotify
 
@@ -49,8 +52,9 @@
     gimp
     krita
     pixieditor
-    # aseprite
+    aseprite
     reaper
+    obsidian
 
     # Utilities
     inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps
@@ -61,7 +65,10 @@
     obs-studio
     obs-studio-plugins.obs-vaapi
     obs-studio-plugins.obs-vkcapture
+    obs-studio-plugins.obs-pipewire-audio-capture
     gpu-screen-recorder-gtk
+    mjpg-streamer
+    vlc
     easyeffects
     video-trimmer
     upscayl
@@ -80,7 +87,7 @@
     lazygit
     wget
     nixd
-    nixfmt-rfc-style
+    nixfmt
     gcc
     python3
     gnumake
@@ -88,5 +95,7 @@
 
     # Misc
     icu
+    webkitgtk_4_1
+    android-tools
   ];
 }

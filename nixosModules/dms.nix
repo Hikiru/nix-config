@@ -2,11 +2,11 @@
 
 {
   imports = [
-    inputs.dankMaterialShell.nixosModules.dankMaterialShell
+    inputs.dankMaterialShell.nixosModules.dank-material-shell
     inputs.dankMaterialShell.nixosModules.greeter
   ];
 
-  programs.dankMaterialShell = {
+  programs.dank-material-shell = {
     enable = true;
     greeter = {
       enable = true;

@@ -58,7 +58,7 @@ in
       openFirewall = true;
       highPriority = true;
       defaultRuntime = true;
-      steam.importOXRRuntimes = true;
+      # steam.importOXRRuntimes = true;
     };
 
     services.sunshine = lib.mkIf cfg.streaming.sunshine.enable {
@@ -71,14 +71,14 @@ in
       with pkgs;
       [
         heroic
+        prismlauncher
         sgdboop
         mangohud
         gamescope
         (callPackage .././derivations/scopebuddy.nix { })
       ]
       ++ lib.optionals cfg.vr.enable [
-        wlx-overlay-s
-        wayvr-dashboard
+        wayvr
       ]
       ++ lib.optional cfg.streaming.moonlight.enable moonlight-qt;
   };

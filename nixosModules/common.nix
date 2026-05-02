@@ -69,6 +69,10 @@
   services.upower.enable = true;
 
   services.playerctld.enable = true;
+  services.mpd = {
+    enable = true;
+    musicDirectory = "/home/hikiru/Music";
+  };
 
   xdg.portal.extraPortals = with pkgs; [
     xdg-desktop-portal-gtk
@@ -79,6 +83,7 @@
 
   services.flatpak.enable = true;
   services.tailscale.enable = true;
+  services.zerotierone.enable = true;
   programs.firefox.enable = true;
   programs.fish.enable = true;
   programs.localsend = {
