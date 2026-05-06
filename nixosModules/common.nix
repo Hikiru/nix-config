@@ -104,6 +104,7 @@
   nixpkgs.config.allowUnfree = true;
 
   fonts = {
+    fontDir.enable = true;
     packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk-sans
