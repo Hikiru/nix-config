@@ -44,7 +44,7 @@
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     (discord.override { withVencord = true; })
     vesktop
-    stoat-desktop
+    # stoat-desktop
     pear-desktop
     spotify
 
@@ -62,21 +62,28 @@
     distrobox
     distroshelf
     onlyoffice-desktopeditors
-    obs-studio
-    obs-studio-plugins.obs-vaapi
-    obs-studio-plugins.obs-vkcapture
-    obs-studio-plugins.obs-pipewire-audio-capture
-    gpu-screen-recorder-gtk
-    mjpg-streamer
-    vlc
-    easyeffects
-    video-trimmer
-    upscayl
-    ffmpeg
     protonvpn-gui
     qbittorrent
     gearlever
-    rpi-imager
+    popsicle
+
+    # Audio/video
+    (wrapOBS {
+      plugins = with pkgs.obs-studio-plugins; [
+        obs-vaapi
+        obs-vkcapture
+        obs-pipewire-audio-capture
+      ];
+    })
+    gpu-screen-recorder-gtk
+    vlc
+    easyeffects
+    constrict
+    video-trimmer
+    upscayl
+    ffmpeg
+    v4l-utils
+    pulseaudio
 
     # Dev
     zed-editor
