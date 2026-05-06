@@ -53,11 +53,15 @@ in
       ];
     };
 
+    # required for switch 2 pro controller
+    services.udev.extraRules = ''
+      SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="2069", MODE="0660", TAG+="uaccess"
+    '';
+
     services.wivrn = lib.mkIf cfg.vr.enable {
       enable = true;
       openFirewall = true;
       highPriority = true;
-      defaultRuntime = true;
       # steam.importOXRRuntimes = true;
     };
 
