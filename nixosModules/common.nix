@@ -69,10 +69,10 @@
   services.upower.enable = true;
 
   services.playerctld.enable = true;
-  services.mpd = {
-    enable = true;
-    musicDirectory = "/home/hikiru/Music";
-  };
+  # services.mpd = {
+  #   enable = true;
+  #   musicDirectory = "/home/hikiru/Music";
+  # };
 
   xdg.portal.extraPortals = with pkgs; [
     xdg-desktop-portal-gtk
