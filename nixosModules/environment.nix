@@ -1,5 +1,5 @@
 {
-  environment.variables = {
+  environment.sessionVariables = {
     OBS_VKCAPTURE = 1;
   };
 }
