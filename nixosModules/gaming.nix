@@ -13,7 +13,7 @@ in
     gaming = {
       enable = lib.mkEnableOption "Enables flatscreen gaming with Steam and Heroic.";
 
-      vr.enable = lib.mkEnableOption "Enables VR with WiVRn and addons.";
+      vr.enable = lib.mkEnableOption "Enables VR with WiVRn and WayVR.";
 
       streaming = {
         enable = lib.mkEnableOption "Installs Sunshine and Moonlight.";

@@ -7,15 +7,17 @@ if [[ -z $HOST ]]; then
     exit 1
 fi
 
-echo "Making host \"$HOST\" directory..."
-mkdir -p hosts/$HOST
+if [[ ! -d "hosts/$HOST" ]]; then
+    echo "Making host \"$HOST\" directory..."
+    mkdir -p hosts/$HOST
+
+    echo "Adding new host to git..."
+    git add hosts/$HOST
+    git commit -m "Init new host: \"$HOST\""
+fi
 
 echo "Copying hardware-configuration.nix..."
 cp -f /etc/nixos/hardware-configuration.nix hosts/$HOST
-
-echo "Adding new host to git..."
-git add hosts/$HOST
-git commit -m "Init new host: \"$HOST\""
 
 echo "Activating configuration..."
 sudo nixos-rebuild switch --flake .#$HOST

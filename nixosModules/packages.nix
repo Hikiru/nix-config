@@ -57,25 +57,16 @@
     obsidian
 
     # Utilities
-    inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps
-    inputs.winapps.packages."${stdenv.hostPlatform.system}".winapps-launcher
     distrobox
     distroshelf
     onlyoffice-desktopeditors
-    protonvpn-gui
+    proton-vpn
     qbittorrent
     gearlever
     popsicle
 
     # Audio/video
-    (wrapOBS {
-      plugins = with pkgs.obs-studio-plugins; [
-        obs-vaapi
-        obs-vkcapture
-        obs-pipewire-audio-capture
-      ];
-    })
-    gpu-screen-recorder-gtk
+    gpu-screen-recorder-ui
     vlc
     easyeffects
     constrict
@@ -91,6 +82,7 @@
     godotPackages_4_3.godot
     godot
     git
+    gh
     lazygit
     wget
     nixd
