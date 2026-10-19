@@ -18,6 +18,7 @@
     celluloid
     chezmoi # chezmoi on NixOS? shameful!
     wallust
+    gsettings-desktop-schemas
 
     # Theming
     libsForQt5.qt5ct
@@ -47,6 +48,7 @@
     # stoat-desktop
     pear-desktop
     spotify
+    stremio-linux-shell
 
     # Creative
     gimp
@@ -91,10 +93,12 @@
     python3
     gnumake
     just
+    glib
 
     # Misc
     icu
     webkitgtk_4_1
     android-tools
+    libGL
   ];
 }

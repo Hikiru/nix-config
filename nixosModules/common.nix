@@ -28,6 +28,11 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+
+  hardware.wirelessRegulatoryDatabase = true;
+  boot.extraModprobeConfig = ''
+    options cfg80211 ieee80211_regdom="US"
+  '';
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = false;
 

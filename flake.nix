@@ -13,12 +13,15 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
   };
 
   outputs =
     {
       self,
       nixpkgs,
+      nixpkgs-xr,
       ...
     }@inputs:
     let
@@ -42,6 +45,7 @@
               modules = myLib.recursivelyImport [
                 (./hosts + "/${hostName}")
                 ./nixosModules
+                nixpkgs-xr.nixosModules.nixpkgs-xr
               ];
             };
         in

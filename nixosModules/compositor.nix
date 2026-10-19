@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
-  programs.umbriel.enable = true; 
-  programs.niri.enable = true; 
+  services.displayManager.defaultSession = lib.mkForce "umbriel";
+  programs.umbriel.enable = true;
+  programs.niri.enable = true;
 
   environment.systemPackages =
     # let

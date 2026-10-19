@@ -19,7 +19,7 @@
       "compress=zstd"
       "noatime"
     ];
-    # "/run/media/hikiru/ssd".options = [ "compress=zstd" ];
+    "/run/media/hikiru/ssd".options = [ "compress=zstd" ];
   };
 
   networking.hostName = "anura";

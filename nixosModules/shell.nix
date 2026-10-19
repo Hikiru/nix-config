@@ -5,11 +5,8 @@
 
   programs.dms-shell = {
     enable = true;
-
-    enableSystemMonitoring = true;
-    enableVPN = true;
-    enableAudioWavelength = true;
-    enableCalendarEvents = true;
+    systemd.enable = false;
+    excludePackages = [ pkgs.matugen ];
   };
 
   services.displayManager.dms-greeter = {

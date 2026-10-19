@@ -37,6 +37,11 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/run/media/hikiru/ssd" =
+    { device = "/dev/disk/by-uuid/4bba334a-4bee-443f-9410-a7713e4caafe";
+      fsType = "btrfs";
+    };
+
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
